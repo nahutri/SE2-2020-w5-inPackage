@@ -49,4 +49,11 @@ public abstract class AbstractMedium implements Medium
 
     }
 
+    public Geldbetrag berechneMietgebuehr(int mietTage)
+    {
+        assert mietTage > 0 : "Vorbedingung verletzt";
+        return new Geldbetrag(mietTage * 300);
+
+    }
+
 }

@@ -113,4 +113,11 @@ class CD extends AbstractMedium
                 + _interpret + "\n" + "    " + "Spiellänge: " + _spiellaenge
                 + "\n";
     }
+
+    @Override
+    public Geldbetrag berechneMietgebuehr(int mietTage)
+    {
+        return super.berechneMietgebuehr(mietTage);
+    }
+
 }

@@ -90,4 +90,14 @@ public class CDTest
         return new CD(TITEL, KOMMENTAR, INTERPRET, LAENGE);
     }
 
+    @Test
+    public void testBerechneMietgebuehr()
+    {
+
+        //assertSame(_cd1.berechneMietgebuehr(1), new Geldbetrag(300));//Ergibt ein Fehler
+        assertEquals(_cd1.berechneMietgebuehr(1), new Geldbetrag(300));
+        assertEquals(_cd1.berechneMietgebuehr(3), new Geldbetrag(900));
+
+    }
+
 }

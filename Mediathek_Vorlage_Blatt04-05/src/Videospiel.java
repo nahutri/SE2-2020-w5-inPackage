@@ -67,4 +67,10 @@ class Videospiel extends AbstractMedium
         return super.getFormatiertenString() + "\n" + "    " + "System: "
                 + _system + "\n";
     }
+
+    @Override
+    public Geldbetrag berechneMietgebuehr(int mietTage)
+    {
+        return super.berechneMietgebuehr(mietTage);
+    }
 }

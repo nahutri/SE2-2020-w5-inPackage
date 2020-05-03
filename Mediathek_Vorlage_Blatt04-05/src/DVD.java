@@ -113,4 +113,13 @@ class DVD extends AbstractMedium
                 + _regisseur + "\n" + "    " + "Laufzeit: " + _laufzeit + "\n";
     }
 
+    @Override
+    public Geldbetrag berechneMietgebuehr(int mietTage)
+    {
+        return super.berechneMietgebuehr(mietTage);
+    }
+    
+
+    
+
 }
