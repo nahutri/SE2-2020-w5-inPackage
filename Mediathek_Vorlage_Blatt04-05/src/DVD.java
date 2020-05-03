@@ -6,7 +6,7 @@
  * @version SoSe 2019
  * 
  */
-class DVD implements Medium
+class DVD extends AbstractMedium
 {
     /**
      * Die Laufzeit des Hauptteils der DVD (in Minuten).
@@ -17,17 +17,6 @@ class DVD implements Medium
      * Der Regisseur des Inhalts der DVD.
      */
     private String _regisseur;
-
-    /**
-     * Ein Kommentar zum Medium
-     */
-    private String _kommentar;
-
-    /**
-     * Der Titel des Mediums
-     * 
-     */
-    private String _titel;
 
     /**
      * Initialisiert eine neue DVD mit den gegebenen Daten.
@@ -49,12 +38,12 @@ class DVD implements Medium
      */
     public DVD(String titel, String kommentar, String regisseur, int laufzeit)
     {
+        super(titel, kommentar);
         assert titel != null : "Vorbedingung verletzt: titel != null";
         assert kommentar != null : "Vorbedingung verletzt: kommentar != null";
         assert laufzeit > 0 : "Vorbedingung verletzt: laufzeit > 0";
         assert regisseur != null : "Vorbedingung verletzt: regisseur != null";
-        _titel = titel;
-        _kommentar = kommentar;
+
         _regisseur = regisseur;
         _laufzeit = laufzeit;
     }
@@ -118,38 +107,10 @@ class DVD implements Medium
     }
 
     @Override
-    public String getKommentar()
-    {
-        return _kommentar;
-    }
-
-    @Override
-    public void setKommentar(String kommentar)
-    {
-        assert kommentar != null : "Vorbedingung verletzt: kommentar != null";
-        _kommentar = kommentar;
-    }
-
-    @Override
-    public String getTitel()
-    {
-        return _titel;
-    }
-
-    @Override
-    public void setTitel(String titel)
-    {
-        assert titel != null : "Vorbedingung verletzt: titel != null";
-        _titel = titel;
-    }
-
-    @Override
     public String getFormatiertenString()
     {
-        return getMedienBezeichnung() + ":\n" + "    " + "Titel: " + _titel
-                + "\n" + "    " + "Kommentar: " + _kommentar + "\n" + "    "
-                + "Regisseur: " + _regisseur + "\n" + "    " + "Laufzeit: "
-                + _laufzeit + "\n";
+        return super.getFormatiertenString() + "\n" + "    " + "Regisseur: "
+                + _regisseur + "\n" + "    " + "Laufzeit: " + _laufzeit + "\n";
     }
 
 }
