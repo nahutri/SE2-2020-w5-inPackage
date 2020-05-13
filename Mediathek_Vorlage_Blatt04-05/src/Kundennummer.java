@@ -3,7 +3,7 @@
  * Kundennummer ist 6 Zeichen lang.
  * 
  * @author SE2-Team
- * @version SoSe 2019
+ * @version SoSe 2020
  */
 final class Kundennummer
 {

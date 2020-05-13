@@ -6,7 +6,7 @@ import org.junit.Test;
 
 /**
  * @author SE2-Team
- * @version SoSe 2019
+ * @version SoSe 2020
  * 
  */
 public class KundennummerTest

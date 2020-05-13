@@ -10,7 +10,7 @@ import javax.swing.table.AbstractTableModel;
  * zurück.
  * 
  * @author SE2-Team
- * @version SoSe 2019
+ * @version SoSe 2020
  */
 class AusleiheMedienTableModel extends AbstractTableModel
 {

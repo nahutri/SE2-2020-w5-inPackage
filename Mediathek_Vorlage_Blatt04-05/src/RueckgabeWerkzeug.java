@@ -13,7 +13,7 @@ import javax.swing.event.ListSelectionListener;
  * Benutzungsoberfläche bereit. Die UI wird durch die RueckgabeUI gestaltet.
  * 
  * @author SE2-Team
- * @version SoSe 2019
+ * @version SoSe 2020
  */
 class RueckgabeWerkzeug
 {

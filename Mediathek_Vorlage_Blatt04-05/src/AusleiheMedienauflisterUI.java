@@ -15,7 +15,7 @@ import javax.swing.table.TableColumn;
  * das {@link AusleiheMedienauflisterWerkzeug}.
  * 
  * @author SE2-Team
- * @version SoSe 2019
+ * @version SoSe 2020
  */
 class AusleiheMedienauflisterUI
 {

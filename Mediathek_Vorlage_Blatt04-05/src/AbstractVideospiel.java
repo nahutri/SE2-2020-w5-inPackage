@@ -5,12 +5,17 @@
  * @author SE2-Team
  * @version SoSe 2012
  */
-class Videospiel extends AbstractMedium
+abstract class AbstractVideospiel extends AbstractMedium
 {
     /**
      * Das System, auf dem das Spiel lauffähig ist
      */
     private String _system;
+
+    /**
+     * Basispreis der Videospielen
+     */
+    protected int _BasisPreis;
 
     /**
      * Initialisiert ein neues Videospiel.
@@ -27,7 +32,7 @@ class Videospiel extends AbstractMedium
      * @ensure getKommentar() == kommentar
      * @ensure getSystem() == system
      */
-    public Videospiel(String titel, String kommentar, String system)
+    public AbstractVideospiel(String titel, String kommentar, String system)
     {
         super(titel, kommentar);
         assert titel != null : "Vorbedingung verletzt: titel != null";
@@ -35,6 +40,7 @@ class Videospiel extends AbstractMedium
         assert system != null : "Vorbedingung verletzt: system != null";
 
         _system = system;
+        _BasisPreis = 200;
     }
 
     @Override
@@ -71,6 +77,13 @@ class Videospiel extends AbstractMedium
     @Override
     public Geldbetrag berechneMietgebuehr(int mietTage)
     {
-        return new Geldbetrag(200);
+        return new Geldbetrag(getPreisNachTagen(mietTage));
     }
+
+    /**
+     * Berechnet den Preis nach Tagen
+     * @param anzahlTage
+     * @return int, Preis nach bestimmten Tagen
+     */
+    abstract public int getPreisNachTagen(int anzahlTage);
 }

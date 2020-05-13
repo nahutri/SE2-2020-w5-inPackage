@@ -15,7 +15,7 @@ import javax.swing.table.JTableHeader;
  * Verleihkartenanzeiger und einen Rücknahmebutton.
  * 
  * @author SE2-Team
- * @version SoSe 2019
+ * @version SoSe 2020
  */
 class RueckgabeUI
 {

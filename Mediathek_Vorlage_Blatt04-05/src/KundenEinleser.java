@@ -16,7 +16,7 @@ import java.util.StringTokenizer;
  * Kundennummer; Vorname; Nachname; Strasse; PLZ; Ort
  * 
  * @author SE2-Team
- * @version SoSe 2019
+ * @version SoSe 2020
  */
 class KundenEinleser
 {

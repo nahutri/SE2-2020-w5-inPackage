@@ -9,7 +9,7 @@ import javax.swing.table.AbstractTableModel;
  * die dort benötigte Information über den Kunde n in einer Zeile zurück.
  * 
  * @author SE2-Team
- * @version SoSe 2019
+ * @version SoSe 2020
  */
 class KundenTableModel extends AbstractTableModel
 {

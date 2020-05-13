@@ -15,18 +15,18 @@ import java.util.regex.Pattern;
  * KonsolenVideospiele und PCVideospiele einlesen.
  * 
  * @author SE2-Team
- * @version SoSe 2019
+ * @version SoSe 2020
  */
 class MedienEinleser
 {
 
     // Dieses Pattern dient der Überprüfung eines Datums
     private static final Pattern DATUM_PATTERN = Pattern
-            .compile("([0-9]{1,2})\\.([0-9]{1,2})\\.([0-9]{4})");
+        .compile("([0-9]{1,2})\\.([0-9]{1,2})\\.([0-9]{4})");
 
     // Dieses pattern dient der Überprüfung einer kundennumer
     private static final Pattern KUNDENNUMEER_PATTERN = Pattern
-            .compile("([0-9]{6})");
+        .compile("([0-9]{6})");
 
     private static String LEERSTRING = "";
 
@@ -133,8 +133,10 @@ class MedienEinleser
             {
                 StringTokenizer tokenizer = new StringTokenizer(line, ";");
 
-                Datum ausleihDatum = ermittleAusleihdatum(naechsterToken(tokenizer));
-                Kundennummer kundennummer = ermittleKundennummer(naechsterToken(tokenizer));
+                Datum ausleihDatum = ermittleAusleihdatum(
+                        naechsterToken(tokenizer));
+                Kundennummer kundennummer = ermittleKundennummer(
+                        naechsterToken(tokenizer));
 
                 Medium medium = leseMediumEin(tokenizer);
                 Verleihkarte verleihkarte = null;
@@ -234,7 +236,7 @@ class MedienEinleser
         {
             String system = naechsterToken(tokenizer);
 
-            medium = new Videospiel(titel, kommentar, system);
+            medium = new KonsolenVideospiel(titel, kommentar, system);
         }
         return medium;
     }

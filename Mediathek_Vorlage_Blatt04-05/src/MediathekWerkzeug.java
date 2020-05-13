@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
  * Das Gesamtwerkzeug der Mediathek, das die anderen Werkzeuge zusammenfasst.
  * 
  * @author SE2-Team
- * @version SoSe 2019
+ * @version SoSe 2020
  */
 class MediathekWerkzeug
 {

@@ -12,7 +12,7 @@ import javax.swing.border.TitledBorder;
  *  * {@link KundenDetailAnzeigerWerkzeug}.
  * 
  * @author SE2-Team
- * @version SoSe 2019
+ * @version SoSe 2020
  */
 class KundenDetailAnzeigerUI
 {

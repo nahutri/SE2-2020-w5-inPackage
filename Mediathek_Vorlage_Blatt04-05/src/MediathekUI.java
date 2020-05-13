@@ -13,7 +13,7 @@ import javax.swing.WindowConstants;
  * Das Hauptfenster für die Anwendung
  * 
  * @author SE2-Team
- * @version SoSe 2019
+ * @version SoSe 2020
  */
 class MediathekUI
 {

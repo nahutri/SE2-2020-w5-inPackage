@@ -9,7 +9,7 @@ import java.util.Map.Entry;
  * einzulesen.
  * 
  * @author SE2-Team
- * @version SoSe 2019
+ * @version SoSe 2020
  */
 class DatenEinleser
 {

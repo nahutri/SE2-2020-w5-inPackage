@@ -9,7 +9,7 @@ import java.util.TimeZone;
  * bilden.
  * 
  * @author SE2-Team
- * @version SoSe 2019
+ * @version SoSe 2020
  */
 final class Datum implements Comparable<Datum>
 {

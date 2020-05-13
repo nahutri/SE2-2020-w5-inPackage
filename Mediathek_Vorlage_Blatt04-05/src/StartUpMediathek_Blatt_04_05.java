@@ -6,7 +6,7 @@ import javax.swing.SwingUtilities;
  * Startet die Hauptanwendung mit grafischer Oberfläche.
  * 
  * @author SE2-Team
- * @version SoSe 2019
+ * @version SoSe 2020
  */
 class StartUpMediathek_Blatt_04_05
 {

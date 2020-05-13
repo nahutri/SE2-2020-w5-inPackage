@@ -2,7 +2,7 @@
  * Ein Geldbetrag in Euro, gespeichert als ganze Euro- und ganze Cent-Beträge.
  * 
  * @author SE2-Team
- * @version SoSe 2019
+ * @version SoSe 2020
  */
 final class Geldbetrag
 {

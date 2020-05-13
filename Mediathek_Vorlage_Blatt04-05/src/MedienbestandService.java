@@ -11,7 +11,7 @@ import java.util.List;
  * müssen das Interface ServiceObserver implementieren.
  * 
  * @author SE2-Team
- * @version SoSe 2019
+ * @version SoSe 2020
  */
 interface MedienbestandService extends ObservableService
 {

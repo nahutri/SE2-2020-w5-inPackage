@@ -13,7 +13,7 @@ import javax.swing.table.JTableHeader;
  * Benutzungsoberfläche für das MedienverwaltungMedienauflisterWerkzeug.
  * 
  * @author SE2-Team
- * @version SoSe 2019
+ * @version SoSe 2020
  */
 class MedienverwaltungMedienauflisterUI
 {

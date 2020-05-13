@@ -5,7 +5,7 @@ import java.awt.Font;
  * Konstanten für die Benutzungsoberfläche
  * 
  * @author SE2-Team
- * @version SoSe 2019
+ * @version SoSe 2020
  */
 interface UIConstants
 {

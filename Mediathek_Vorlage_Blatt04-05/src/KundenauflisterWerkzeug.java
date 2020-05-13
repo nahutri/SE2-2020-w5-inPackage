@@ -11,7 +11,7 @@ import javax.swing.event.ListSelectionListener;
  * Kunden.
  * 
  * @author SE2-Team
- * @version SoSe 2019
+ * @version SoSe 2020
  */
 class KundenauflisterWerkzeug extends ObservableSubWerkzeug
 {

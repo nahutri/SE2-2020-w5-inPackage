@@ -5,44 +5,45 @@ import org.junit.Test;
 
 /**
  */
-public class VideospielTest
+public class PCVideospielTest
 {
     private static final String KOMMENTAR = "Kommentar";
     private static final String TITEL = "Titel";
     private static final String BEZEICHNUNG = "Videospiel";
     private static final String SYSTEM = "System";
-    private Videospiel _videoSpiel;
+    private PCVideospiel _PCVideoSpiel;
 
     @Before
     public void setUp()
     {
-        _videoSpiel = getMedium();
+        _PCVideoSpiel = getMedium();
     }
 
     @Test
     public void testeKonstruktoren()
     {
-        assertEquals(TITEL, _videoSpiel.getTitel());
-        assertEquals(KOMMENTAR, _videoSpiel.getKommentar());
-        assertEquals(SYSTEM, _videoSpiel.getSystem());
+        assertEquals(TITEL, _PCVideoSpiel.getTitel());
+        assertEquals(KOMMENTAR, _PCVideoSpiel.getKommentar());
+        assertEquals(SYSTEM, _PCVideoSpiel.getSystem());
     }
 
     @Test
     public void testGetMedienBezeichnung()
     {
         String videospielBezeichnung = BEZEICHNUNG;
-        assertEquals(videospielBezeichnung, _videoSpiel.getMedienBezeichnung());
+        assertEquals(videospielBezeichnung,
+                _PCVideoSpiel.getMedienBezeichnung());
     }
 
-    protected Videospiel getMedium()
+    protected PCVideospiel getMedium()
     {
-        return new Videospiel(TITEL, KOMMENTAR, SYSTEM);
+        return new PCVideospiel(TITEL, KOMMENTAR, SYSTEM);
     }
 
     @Test
     public final void testSetKommentar()
     {
-        Videospiel medium = getMedium();
+        AbstractVideospiel medium = getMedium();
         medium.setKommentar("Kommentar2");
         assertEquals(medium.getKommentar(), "Kommentar2");
     }
@@ -50,7 +51,7 @@ public class VideospielTest
     @Test
     public final void testSetTitel()
     {
-        Videospiel medium = getMedium();
+        AbstractVideospiel medium = getMedium();
         medium.setTitel("Titel2");
         assertEquals(medium.getTitel(), "Titel2");
     }
@@ -59,8 +60,12 @@ public class VideospielTest
     public void testBerechneMietgebuehr()
     {
 
-        assertEquals(_videoSpiel.berechneMietgebuehr(1), new Geldbetrag(200));
-        assertEquals(_videoSpiel.berechneMietgebuehr(3), new Geldbetrag(200));
+        assertEquals(_PCVideoSpiel.berechneMietgebuehr(1), new Geldbetrag(200));
+        assertEquals(_PCVideoSpiel.berechneMietgebuehr(8), new Geldbetrag(700));
+        assertEquals(_PCVideoSpiel.berechneMietgebuehr(13),
+                new Geldbetrag(1200));
+        assertEquals(_PCVideoSpiel.berechneMietgebuehr(18),
+                new Geldbetrag(1700));
 
     }
 

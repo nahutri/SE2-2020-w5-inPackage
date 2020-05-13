@@ -13,7 +13,7 @@ import javax.swing.table.JTableHeader;
  * {@link KundenauflisterWerkzeug}.
  * 
  * @author SE2-Team
- * @version SoSe 2019
+ * @version SoSe 2020
  */
 class KundenauflisterUI
 {

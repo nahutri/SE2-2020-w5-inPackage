@@ -6,7 +6,7 @@ import java.util.Comparator;
  * sortiert angezeigt werden können.
  * 
  * @author SE2-Team
- * @version SoSe 2019
+ * @version SoSe 2020
  */
 class AusleiheMedienFormatiererComparator implements
         Comparator<AusleiheMedienFormatierer>, Serializable

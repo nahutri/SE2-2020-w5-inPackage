@@ -8,7 +8,7 @@ import java.util.List;
  * z.B. die gleiche CD mehrfach vorhanden sein.
  * 
  * @author SE2-Team
- * @version SoSe 2019
+ * @version SoSe 2020
  */
 class MedienbestandServiceImpl extends AbstractObservableService implements
         MedienbestandService

@@ -3,7 +3,7 @@
  * sie Informationen zu Spiellänge und Interpret.
  * 
  * @author SE2-Team
- * @version SoSe 2019
+ * @version SoSe 2020
  */
 class CD extends AbstractMedium
 {
