@@ -1,9 +1,20 @@
 
 public abstract class AbstractMedium implements Medium
 {
+    /**
+     * Titel des Mediums
+     */
     protected String _titel;
+    /**
+     * Kommentar des Mediums
+     */
     protected String _kommentar;
 
+    /**
+     * Konstruktor des Mediums
+     * @param titel
+     * @param kommentar
+     */
     public AbstractMedium(String titel, String kommentar)
     {
         _titel = titel;
@@ -11,15 +22,21 @@ public abstract class AbstractMedium implements Medium
 
     }
 
+    /**
+     * Gibt die MedienBezeichnung
+     */
     public abstract String getMedienBezeichnung();
 
+    /**
+     * Gibt den Kommentar
+     */
     public String getKommentar()
     {
         return _kommentar;
     }
 
     /**
-     * 
+     * Setzt den Kommentar
      */
     public void setKommentar(String kommentar)
     {
@@ -27,7 +44,7 @@ public abstract class AbstractMedium implements Medium
     }
 
     /**
-     * 
+     * Gibt den Titel
      */
     public String getTitel()
     {
@@ -35,13 +52,16 @@ public abstract class AbstractMedium implements Medium
     }
 
     /**
-     * 
+     * Setzt den Titel
      */
     public void setTitel(String titel)
     {
         _titel = titel;
     }
 
+    /**
+     * Gibt alle Infos des Medium
+     */
     public String getFormatiertenString()
     {
         return getMedienBezeichnung() + ":\n" + " " + "Titel:" + _titel + "\n"
@@ -49,6 +69,9 @@ public abstract class AbstractMedium implements Medium
 
     }
 
+    /**
+     * Berechnet die Mietgebühren
+     */
     public Geldbetrag berechneMietgebuehr(int mietTage)
     {
         assert mietTage > 0 : "Vorbedingung verletzt";

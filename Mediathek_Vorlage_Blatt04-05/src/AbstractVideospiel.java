@@ -13,7 +13,7 @@ abstract class AbstractVideospiel extends AbstractMedium
     private String _system;
 
     /**
-     * Basispreis der Videospielen
+     * Basispreis der Videospiele
      */
     protected int _BasisPreis;
 

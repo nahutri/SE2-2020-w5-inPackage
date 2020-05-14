@@ -1,6 +1,12 @@
 
 public class KonsolenVideospiel extends AbstractVideospiel
 {
+    /**
+     * Konstruktor der Klasse
+     * @param titel
+     * @param kommentar
+     * @param system
+     */
     public KonsolenVideospiel(String titel, String kommentar, String system)
     {
         super(titel, kommentar, system);
