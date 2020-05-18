@@ -9,7 +9,7 @@ public class PCVideospielTest
 {
     private static final String KOMMENTAR = "Kommentar";
     private static final String TITEL = "Titel";
-    private static final String BEZEICHNUNG = "Videospiel";
+    private static final String BEZEICHNUNG = "PCVideospiel";
     private static final String SYSTEM = "System";
     private PCVideospiel _PCVideoSpiel;
 
@@ -62,6 +62,9 @@ public class PCVideospielTest
 
         assertEquals(_PCVideoSpiel.berechneMietgebuehr(1), new Geldbetrag(200));
         assertEquals(_PCVideoSpiel.berechneMietgebuehr(8), new Geldbetrag(700));
+        assertEquals(_PCVideoSpiel.berechneMietgebuehr(12),
+                new Geldbetrag(700));
+
         assertEquals(_PCVideoSpiel.berechneMietgebuehr(13),
                 new Geldbetrag(1200));
         assertEquals(_PCVideoSpiel.berechneMietgebuehr(18),

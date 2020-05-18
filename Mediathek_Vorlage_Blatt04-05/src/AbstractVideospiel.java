@@ -12,10 +12,7 @@ abstract class AbstractVideospiel extends AbstractMedium
      */
     private String _system;
 
-    /**
-     * Basispreis der Videospiele
-     */
-    protected int _BasisPreis;
+    protected static final int _BasisPreis = 200;
 
     /**
      * Initialisiert ein neues Videospiel.
@@ -40,14 +37,11 @@ abstract class AbstractVideospiel extends AbstractMedium
         assert system != null : "Vorbedingung verletzt: system != null";
 
         _system = system;
-        _BasisPreis = 200;
+
     }
 
     @Override
-    public String getMedienBezeichnung()
-    {
-        return "Videospiel";
-    }
+    public abstract String getMedienBezeichnung();
 
     /**
      * Gibt das System zurück, auf dem das Spiel lauffähig ist.
@@ -77,7 +71,7 @@ abstract class AbstractVideospiel extends AbstractMedium
     @Override
     public Geldbetrag berechneMietgebuehr(int mietTage)
     {
-        return new Geldbetrag(getPreisNachTagen(mietTage));
+        return new Geldbetrag(getPreisNachTagen(mietTage) + _BasisPreis);
     }
 
     /**
@@ -85,5 +79,5 @@ abstract class AbstractVideospiel extends AbstractMedium
      * @param anzahlTage
      * @return int, Preis nach bestimmten Tagen
      */
-    abstract public int getPreisNachTagen(int anzahlTage);
+    abstract protected int getPreisNachTagen(int anzahlTage);
 }

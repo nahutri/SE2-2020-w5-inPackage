@@ -13,21 +13,18 @@ public class KonsolenVideospiel extends AbstractVideospiel
 
     }
 
-    /**
-     * Hilfsmethode: berechnet den Zusatzpreis
-     * @param mietTage
-     * @return
-     */
-    private int zusatzPreis(int mietTage)
+    @Override
+    public int getPreisNachTagen(int mietTage)
     {
         return (mietTage / 3) * 700;
+
     }
 
     @Override
-    public int getPreisNachTagen(int anzahlTage)
+    public String getMedienBezeichnung()
     {
 
-        return zusatzPreis(anzahlTage) + _BasisPreis;
+        return "KonsolenVideospiel";
     }
 
 }

@@ -12,24 +12,29 @@ public class PCVideospiel extends AbstractVideospiel
         super(titel, kommentar, system);
     }
 
-    /**
-     * Hilfsmethode: berechnet den Zusatzpreis
-     * @param mietTage
-     * @return
-     */
-    private int zusatzPreis(int mietTage)
+    @Override
+    protected int getPreisNachTagen(int tage)
     {
-        if (mietTage < 8)
+        if (tage > 7)
         {
-            return 0;
+            tage -= 7;
+            int i = 0;
+            while (tage > 0)
+            {
+                i++;
+                tage -= 5;
+            }
+            return 500 * i;
+
         }
-        return (mietTage / 5) * 500;
+        return 0;
     }
 
     @Override
-    public int getPreisNachTagen(int anzahlTage)
+    public String getMedienBezeichnung()
     {
-        return _BasisPreis + zusatzPreis(anzahlTage);
+
+        return "PCVideospiel";
     }
 
 }

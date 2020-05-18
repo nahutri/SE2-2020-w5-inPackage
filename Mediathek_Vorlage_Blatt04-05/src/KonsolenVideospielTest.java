@@ -9,7 +9,7 @@ public class KonsolenVideospielTest
 {
     private static final String KOMMENTAR = "Kommentar";
     private static final String TITEL = "Titel";
-    private static final String BEZEICHNUNG = "Videospiel";
+    private static final String BEZEICHNUNG = "KonsolenVideospiel";
     private static final String SYSTEM = "System";
     private KonsolenVideospiel _KonsolenVideoSpiel;
 
