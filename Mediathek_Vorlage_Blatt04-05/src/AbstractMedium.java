@@ -14,16 +14,21 @@ public abstract class AbstractMedium implements Medium
      * Konstruktor des Mediums
      * @param titel
      * @param kommentar
+     * 
+     * @require titel !=null
+     * @require kommentar != null
+     * 
+     * @ensure getTitel()==titel
+     * @ensure getKommentar == kommentar
      */
     protected AbstractMedium(String titel, String kommentar)
     {
+        assert titel != null : "Vorbedingung verletzt:titel ist null";
+        assert kommentar != null : "Vorbedingung verletzt:kommentar ist null";
         _titel = titel;
         _kommentar = kommentar;
 
     }
-
-    @Override
-    public abstract String getMedienBezeichnung();
 
     @Override
     public String getKommentar()

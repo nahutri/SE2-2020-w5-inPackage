@@ -12,7 +12,7 @@ abstract class AbstractVideospiel extends AbstractMedium
      */
     private String _system;
 
-    protected static final int _BasisPreis = 200;
+    protected static final int BASIS_PREIS = 200;
 
     /**
      * Initialisiert ein neues Videospiel.
@@ -21,19 +21,16 @@ abstract class AbstractVideospiel extends AbstractMedium
      * @param kommentar Ein Kommentar zum Spiel
      * @param system Die Bezeichnung des System
      * 
-     * @require titel != null
-     * @require kommentar != null
+    
      * @require system != null
      * 
-     * @ensure getTitel() == titel
-     * @ensure getKommentar() == kommentar
+    
      * @ensure getSystem() == system
      */
     public AbstractVideospiel(String titel, String kommentar, String system)
     {
         super(titel, kommentar);
-        assert titel != null : "Vorbedingung verletzt: titel != null";
-        assert kommentar != null : "Vorbedingung verletzt: kommentar != null";
+
         assert system != null : "Vorbedingung verletzt: system != null";
 
         _system = system;
@@ -71,7 +68,7 @@ abstract class AbstractVideospiel extends AbstractMedium
     @Override
     public Geldbetrag berechneMietgebuehr(int mietTage)
     {
-        return new Geldbetrag(getPreisNachTagen(mietTage) + _BasisPreis);
+        return new Geldbetrag(getPreisNachTagen(mietTage) + BASIS_PREIS);
     }
 
     /**

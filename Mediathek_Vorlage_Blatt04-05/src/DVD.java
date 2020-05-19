@@ -26,21 +26,18 @@ class DVD extends AbstractMedium
      * @param regisseur Der Regisseur des Inhalts der DVD.
      * @param laufzeit Die Laufzeit des Hauptteils der DVD in Minuten.
      * 
-     * @require titel != null
-     * @require kommentar != null
+    
      * @require regisseur != null
      * @require laufzeit > 0
      * 
-     * @ensure {@link #getTitel()} == titel
-     * @ensure {@link #getKommentar()} == kommentar
+    
      * @ensure {@link #getRegisseur()} == regisseur
      * @ensure {@link #getLaufzeit()} == laufzeit
      */
     public DVD(String titel, String kommentar, String regisseur, int laufzeit)
     {
         super(titel, kommentar);
-        assert titel != null : "Vorbedingung verletzt: titel != null";
-        assert kommentar != null : "Vorbedingung verletzt: kommentar != null";
+
         assert laufzeit > 0 : "Vorbedingung verletzt: laufzeit > 0";
         assert regisseur != null : "Vorbedingung verletzt: regisseur != null";
 
@@ -118,8 +115,5 @@ class DVD extends AbstractMedium
     {
         return super.berechneMietgebuehr(mietTage);
     }
-    
-
-    
 
 }

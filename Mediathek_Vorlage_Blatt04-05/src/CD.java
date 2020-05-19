@@ -25,13 +25,11 @@ class CD extends AbstractMedium
      * @param interpret Der Interpret der CD
      * @param spiellaenge Die Spiellaenge der CD in Minuten
      * 
-     * @require titel != null
-     * @require kommentar != null
+    
      * @require interpret != null
      * @require spiellaenge > 0
      * 
-     * @ensure {@link #getTitel()} == titel
-     * @ensure {@link #getKommentar()} == kommentar
+    
      * @ensure {@link #getInterpret()} == interpret
      * @ensure {@link #getSpiellaenge()} == spiellaenge
      */
@@ -39,8 +37,6 @@ class CD extends AbstractMedium
     {
         super(titel, kommentar);
 
-        assert titel != null : "Vorbedingung verletzt: titel != null";
-        assert kommentar != null : "Vorbedingung verletzt: kommentar != null";
         assert interpret != null : "Vorbedingung verletzt: interpret != null";
         assert spiellaenge > 0 : "Vorbedingung verletzt: spiellaenge > 0";
 

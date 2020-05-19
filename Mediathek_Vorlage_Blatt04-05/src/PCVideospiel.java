@@ -15,19 +15,7 @@ public class PCVideospiel extends AbstractVideospiel
     @Override
     protected int getPreisNachTagen(int tage)
     {
-        if (tage > 7)
-        {
-            tage -= 7;
-            int i = 0;
-            while (tage > 0)
-            {
-                i++;
-                tage -= 5;
-            }
-            return 500 * i;
-
-        }
-        return 0;
+        return Math.max(0, tage - 3) / 5 * 500;
     }
 
     @Override
