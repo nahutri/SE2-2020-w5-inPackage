@@ -8,7 +8,9 @@ public class VerleihProtokollierer
      * @param ereignis
      * @param verleihkarte
      */
-    public static void protokolliere(String ereignis, Verleihkarte verleihkarte)
+    //public static void protokolliere(String ereignis, Verleihkarte verleihkarte)//bis 5.2.6
+    public static void protokolliere(VerleihEreignis ereignis,
+            Verleihkarte verleihkarte)
     {
         //System.out.println("Protokolliert! Ausleihe oder Rückgabe");//5.2.3
 
