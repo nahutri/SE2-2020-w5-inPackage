@@ -3,6 +3,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.event.ListSelectionEvent;
@@ -78,17 +79,18 @@ class RueckgabeWerkzeug
      */
     private void registriereVerleihkartenAnzeigenAktion()
     {
-        _rueckgabeUI.getVerleihkartenAuflisterTable().getSelectionModel()
-                .addListSelectionListener(new ListSelectionListener()
-                {
+        _rueckgabeUI.getVerleihkartenAuflisterTable()
+            .getSelectionModel()
+            .addListSelectionListener(new ListSelectionListener()
+            {
 
-                    @Override
-                    public void valueChanged(ListSelectionEvent e)
-                    {
-                        zeigeAusgewaehlteVerleihkarten();
-                        aktualisiereRuecknahmeButton();
-                    }
-                });
+                @Override
+                public void valueChanged(ListSelectionEvent e)
+                {
+                    zeigeAusgewaehlteVerleihkarten();
+                    aktualisiereRuecknahmeButton();
+                }
+            });
     }
 
     /**
@@ -96,15 +98,15 @@ class RueckgabeWerkzeug
      */
     private void registriereRuecknahmeAktion()
     {
-        _rueckgabeUI.getRuecknahmeButton().addActionListener(
-                new ActionListener()
+        _rueckgabeUI.getRuecknahmeButton()
+            .addActionListener(new ActionListener()
+            {
+                @Override
+                public void actionPerformed(ActionEvent e)
                 {
-                    @Override
-                    public void actionPerformed(ActionEvent e)
-                    {
-                        nimmAusgewaehlteMedienZurueck();
-                    }
-                });
+                    nimmAusgewaehlteMedienZurueck();
+                }
+            });
     }
 
     /**
@@ -129,8 +131,8 @@ class RueckgabeWerkzeug
     private void setzeAnzuzeigendeVerleihkarten()
     {
         List<Verleihkarte> verleihkarten = _verleihService.getVerleihkarten();
-        _rueckgabeUI.getVerleihkartenAuflisterTableModel().setVerleihkarten(
-                verleihkarten);
+        _rueckgabeUI.getVerleihkartenAuflisterTableModel()
+            .setVerleihkarten(verleihkarten);
     }
 
     /**
@@ -144,7 +146,15 @@ class RueckgabeWerkzeug
         {
             medien.add(verleihkarte.getMedium());
         }
-        _verleihService.nimmZurueck(medien, Datum.heute());
+        try
+        {
+            _verleihService.nimmZurueck(medien, Datum.heute());
+        }
+        catch (ProtokollierException e)
+        {
+            JOptionPane.showMessageDialog(null, e, "Fehlermeldung",
+                    JOptionPane.ERROR_MESSAGE);//5.3.3
+        }
     }
 
     /**
@@ -154,12 +164,12 @@ class RueckgabeWerkzeug
     {
         List<Verleihkarte> selektierteVerleihkarten = getSelectedVerleihkarten();
         JTextArea _ausgewaehlteVerleihkartenTextArea = _rueckgabeUI
-                .getVerleihkartenAnzeigerTextArea();
+            .getVerleihkartenAnzeigerTextArea();
         _ausgewaehlteVerleihkartenTextArea.setText("");
         for (Verleihkarte verleihkarte : selektierteVerleihkarten)
         {
-            _ausgewaehlteVerleihkartenTextArea.append(verleihkarte
-                    .getFormatiertenString());
+            _ausgewaehlteVerleihkartenTextArea
+                .append(verleihkarte.getFormatiertenString());
             _ausgewaehlteVerleihkartenTextArea.append("--------------- \n");
         }
     }
@@ -169,8 +179,8 @@ class RueckgabeWerkzeug
      */
     private void aktualisiereRuecknahmeButton()
     {
-        _rueckgabeUI.getRuecknahmeButton().setEnabled(
-                !getSelectedVerleihkarten().isEmpty());
+        _rueckgabeUI.getRuecknahmeButton()
+            .setEnabled(!getSelectedVerleihkarten().isEmpty());
     }
 
     /**
@@ -196,12 +206,12 @@ class RueckgabeWerkzeug
     {
         List<Verleihkarte> result = new ArrayList<Verleihkarte>();
         int[] selectedRows = _rueckgabeUI.getVerleihkartenAuflisterTable()
-                .getSelectedRows();
+            .getSelectedRows();
         for (int zeile : selectedRows)
         {
             Verleihkarte verleihkarte = _rueckgabeUI
-                    .getVerleihkartenAuflisterTableModel()
-                    .getVerleihkartenFuerZeile(zeile);
+                .getVerleihkartenAuflisterTableModel()
+                .getVerleihkartenFuerZeile(zeile);
             result.add(verleihkarte);
         }
         return result;
